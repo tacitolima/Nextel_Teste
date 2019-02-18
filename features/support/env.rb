@@ -1,5 +1,6 @@
 require 'capybara'
 require 'capybara/cucumber'
+require 'site_prism'
 
 #objeto default_driver => testar no chrome = selenium_chrome
 Capybara.configure do |config|

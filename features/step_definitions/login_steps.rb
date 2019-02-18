@@ -1,13 +1,16 @@
-
+account_page = AccountPage.new
 
   Dado('que eu acesso a página principal') do
     visit 'http://www.newtours.demoaut.com/'
   end
   
   Quando('eu faço login com {string} e {string}') do |usuario, senha|
-    @usuario = usuario
-    login = LoginPage.new
-    login.doLogin(usuario, senha)
+    account_page.account_name.set usuario
+    account_page.account_password.set senha
+    click_button 'Sign-In'
+    # @usuario = usuario
+    # login = LoginPage.new
+    # login.doLogin(usuario, senha)
     #Instancia anônima LoginPage.new.faz_login(usuario, senha)
   end
   
